@@ -1,0 +1,29 @@
+* What is the point of this repo?
+
+This is a study of how to use Clojure protocols and records to invert the dependency injection.
+
+Explanation.
+
+In =prot.clj= we define two protocols that we want to implement for our project.
+
+In =data.clj= we define a data type as record, and also create an implementation of the first protocol.
+
+In =tools.clj= we create implement the other protocol, =Prot2= for the record type =Data1=.
+
+In =tools2.clj= we create another implementation of the protocol =Prot2= for the record type =Data1=.
+
+In =code.clj=, we want to use the protocols for processing the data received as argument. The whole purpose of this is to be able to call the protocols without having to include the actual implementation in =tools.clj=. As we can see from the namespace declaration, the implementation is not included in the namespace requirements.
+
+In =core.clj= is the entry point of the application. The implementation of =Prot2= used by the the function in =code.clj= is chosen here. You can switch between the namespaces =tools= and =tools2= in the require statement.
+
+The whole point of this demonstration is to show, how to write =code.clj= without having to explicitly require/use either of the =tools= or =tools2= namespaces.
+
+* Using
+
+This repository has been tested for three tools:
+
+- Creating a JAR with =clj -T:build uber= and running with =java -jar target/clj-prot-standalone.jar "hello"=
+- Running the REPL from Emacs CIDER
+- Running with =clj -M -m core "Hello"=
+
+  
