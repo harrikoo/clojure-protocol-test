@@ -8,4 +8,3 @@
   Data1
   (dothing2 [this] (str " And '" (:f2 this) "' from tools2"))
   )
-
