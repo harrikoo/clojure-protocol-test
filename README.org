@@ -22,8 +22,8 @@ The whole point of this demonstration is to show, how to write =code.clj= withou
 
 This repository has been tested for three tools:
 
-- Creating a JAR with =clj -T:build uber= and running with =java -jar target/clj-prot-standalone.jar "hello" =
+- Creating a JAR with =clj -T:build uber= and running with =java -jar target/clj-prot-standalone.jar \"hello\"=
 - Running the REPL from Emacs CIDER
-- Running with =clj -M -m core "Hello" =
+- Running with =clj -M -m core \"Hello\"=
 
   
